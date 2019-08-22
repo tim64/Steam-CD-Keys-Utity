@@ -52,7 +52,6 @@ def replace_key_count(file_name, count):
     sep = " "
 
     word_list = file_name.split(sep)
-    print (word_list)
     for i in range(len(word_list)):
         if word_list[i].isdigit() and len(word_list[i]) > 1:
             word_list[i] = str(count)
@@ -65,22 +64,22 @@ def rename_original(old, new):
     os.rename(old, new)
 
 
-def main(original_filename, key_count):
+def main(original_name, key_count):
     key_count = int(key_count)
     # Получение всех ключей из файла
-    lines = get_file_strings(original_filename)
+    lines = get_file_strings(original_name)
 
-    current_key_count = int(get_count_from_filename(original_filename))
-    new_filename = replace_key_count(original_filename, key_count)
-    new_original_filename = replace_key_count(original_filename, current_key_count - key_count)
+    current_key_count = int(get_count_from_filename(original_name))
+    new_name = replace_key_count(original_name, key_count)
+    new_original_name = replace_key_count(original_name, current_key_count - key_count)
 
     # Записываем нужное кол-во ключей в новый файл
-    new_file = open(new_filename, "w")
+    new_file = open(new_name, "w")
     write_new_keys(key_count, lines, new_file)
 
     # Удаляем соответствующие строки в исходном файле (перезаписываем файл заново)
-    delete_keys_from_original(key_count, lines, original_filename)
-    rename_original(original_filename, new_original_filename)
+    delete_keys_from_original(key_count, lines, original_name)
+    rename_original(original_name, new_original_name)
     return
 
 
