@@ -54,7 +54,7 @@ def check_file_read(filename):
     except IOError:
         print "Не могу прочитать файл:", filename
         return False
-    except SomeException:
+    except SystemError:
         print "С файлом что-то не так:", filename
         return False
 
@@ -68,10 +68,7 @@ def check_file_write(filename):
     except IOError:
         print "Ошибка ввода данных:", filename
         return False
-    except PermissionError:
-        print "Файл защищен от изменений:", filename
-        return False
-    except SomeException:
+    except SystemError:
         print "С файлом что-то не так:", filename
         return False
 
