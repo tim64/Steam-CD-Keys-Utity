@@ -11,25 +11,27 @@ bad_spaces = "\xc2\xa0"  # non-breaking-space
 
 # Функция перезаписывает файл и записывает в него все ключ, кроме тех, которые мы отсекли ранее
 def delete_keys_from_original(key_count, key_list, filename):
-    f = open(filename, "w")
-    max_lines = len(key_list)
-    for index, key in enumerate(key_list):
-        if index == max_lines - key_count:
-            f.close()
-            return
-        else:
-            f.writelines(key)
+    if check_file_write(filename):
+        f = open(filename, "w")
+        max_lines = len(key_list)
+        for index, key in enumerate(key_list):
+            if index == max_lines - key_count:
+                f.close()
+                return
+            else:
+                f.writelines(key)
 
 
 # Функция записывает ключи в новый файл
 def write_new_keys(key_count, key_list, filename):
-    f = open(filename, "w")
-    for index, key in enumerate(reversed(key_list)):
-        if index == key_count:
-            f.close()
-            return
-        else:
-            f.writelines(key)
+    if check_file_write(filename):
+        f = open(filename, "w")
+        for index, key in enumerate(reversed(key_list)):
+            if index == key_count:
+                f.close()
+                return
+            else:
+                f.writelines(key)
 
 
 # Функция проверяет доступность файла для чтения
@@ -37,7 +39,27 @@ def check_file_read(filename):
     try:
         open(filename, 'rb')
     except IOError:
-        print "Could not read file:", filename
+        print "Не могу прочитать файл:", filename
+        return False
+    except SomeException:
+        print "С файлом что-то не так:", filename
+        return False
+
+    return True
+
+
+# Функция проверяет доступность файла для записи
+def check_file_write(filename):
+    try:
+        open(filename, 'wb')
+    except IOError:
+        print "Ошибка ввода данных:", filename
+        return False
+    except PermissionError:
+        print "Файл защищен от изменений:", filename
+        return False
+    except SomeException:
+        print "С файлом что-то не так:", filename
         return False
 
     return True
@@ -76,7 +98,8 @@ def replace_key_count(file_name, key_count):
 
 # Функция переименовывает файл
 def rename_original(old_name, new_name):
-    os.rename(old_name, new_name)
+    if check_file_write(old_name):
+        os.rename(old_name, new_name)
 
 
 def main(original_name, key_count):
