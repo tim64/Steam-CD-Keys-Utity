@@ -2,7 +2,6 @@
 # !/usr/local/bin/python3
 import sys
 import datetime
-import os
 from time import gmtime, strftime
 
 
