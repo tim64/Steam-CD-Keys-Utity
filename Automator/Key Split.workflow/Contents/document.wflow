@@ -151,7 +151,7 @@
 					<dict>
 						<key>tokenizedValue</key>
 						<array>
-							<string>500</string>
+							<string>100</string>
 						</array>
 					</dict>
 					<key>defaultMessage</key>
@@ -184,7 +184,7 @@
 					<key>buttonNegative</key>
 					<string>Отменить</string>
 					<key>defaultAnswer</key>
-					<string>500</string>
+					<string>100</string>
 					<key>defaultMessage</key>
 					<string>Сколько ключей?</string>
 					<key>requireInput</key>
@@ -810,6 +810,116 @@
 					<key>Container</key>
 					<string>List</string>
 					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>v.1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>variableUUID</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<false/>
+						<key>selectedVariableUUID</key>
+						<string>D4664908-C5C8-4153-A916-3B1CB4F6117C</string>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>*</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Set Value of Variable.action</string>
+				<key>ActionName</key>
+				<string>Установить значение переменной</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>variableUUID</key>
+					<string>D4664908-C5C8-4153-A916-3B1CB4F6117C</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.SetValueofVariable</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>Set_Value_of_Variable</string>
+				<key>InputUUID</key>
+				<string>E6C55269-0C84-471F-B3C9-5459F71DFF69</string>
+				<key>Keywords</key>
+				<array>
+					<string>Переменная</string>
+					<string>связывание</string>
+					<string>Вход</string>
+					<string>Выход</string>
+					<string>Память</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>57442062-D135-4FFC-8649-18F5B48B8D5C</string>
+				<key>UUID</key>
+				<string>B03ED046-A685-4A20-BC3C-DC1E252B23B7</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>variableUUID</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>481.500000:1005.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
 					<true/>
 					<key>Types</key>
 					<array/>
@@ -825,22 +935,20 @@
 					<key>message</key>
 					<dict>
 						<key>tokenizedValue</key>
-						<array/>
+						<array>
+							<string>$(D4664908-C5C8-4153-A916-3B1CB4F6117C)</string>
+						</array>
 					</dict>
 					<key>subtitle</key>
 					<dict>
 						<key>tokenizedValue</key>
-						<array>
-							<string>Получено </string>
-							<string>$(289E1FF7-3959-4551-AE20-49D61E09C538)</string>
-							<string> ключей</string>
-						</array>
+						<array/>
 					</dict>
 					<key>title</key>
 					<dict>
 						<key>tokenizedValue</key>
 						<array>
-							<string>Работа выполена, Милорд!</string>
+							<string>Результат работы</string>
 						</array>
 					</dict>
 				</dict>
@@ -858,11 +966,11 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>message</key>
-					<string></string>
+					<string>$(D4664908-C5C8-4153-A916-3B1CB4F6117C)$(D4664908-C5C8-4153-A916-3B1CB4F6117C)</string>
 					<key>subtitle</key>
-					<string>Получено $(289E1FF7-3959-4551-AE20-49D61E09C538)</string>
+					<string></string>
 					<key>title</key>
-					<string>Работа выполена, Милорд!</string>
+					<string>Результат работы</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.Display-Notification</string>
@@ -935,7 +1043,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>481.500000:1089.000000</string>
+				<string>481.500000:1246.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Display Notification.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -945,6 +1053,13 @@
 	</array>
 	<key>connectors</key>
 	<dict>
+		<key>171D8AA7-06B7-422D-805E-9B2E42FDAF36</key>
+		<dict>
+			<key>from</key>
+			<string>B03ED046-A685-4A20-BC3C-DC1E252B23B7 - B03ED046-A685-4A20-BC3C-DC1E252B23B7</string>
+			<key>to</key>
+			<string>17244E13-B7CD-42F5-BCC5-185265259A9C - 17244E13-B7CD-42F5-BCC5-185265259A9C</string>
+		</dict>
 		<key>393F3366-D4FE-47F1-B1DA-99224609AD28</key>
 		<dict>
 			<key>from</key>
@@ -966,12 +1081,12 @@
 			<key>to</key>
 			<string>8F7E249F-834E-4983-A194-F70D0B04C0E1 - 8F7E249F-834E-4983-A194-F70D0B04C0E1</string>
 		</dict>
-		<key>DEFE34A5-C1B5-4F73-8E45-18D5F75A8A2E</key>
+		<key>6B73E8A6-5EF3-40AA-8E50-B9397D002412</key>
 		<dict>
 			<key>from</key>
 			<string>47063803-793B-44A1-BDA4-55E9B3373349 - 47063803-793B-44A1-BDA4-55E9B3373349</string>
 			<key>to</key>
-			<string>17244E13-B7CD-42F5-BCC5-185265259A9C - 17244E13-B7CD-42F5-BCC5-185265259A9C</string>
+			<string>B03ED046-A685-4A20-BC3C-DC1E252B23B7 - B03ED046-A685-4A20-BC3C-DC1E252B23B7</string>
 		</dict>
 		<key>F6F80C6E-0D09-4570-8ABF-EB80D8E24E12</key>
 		<dict>
@@ -1025,6 +1140,26 @@
 			<string>com.apple.Automator.Variable.Text</string>
 			<key>name</key>
 			<string>Текст</string>
+			<key>value</key>
+			<string>Text</string>
+		</dict>
+		<dict>
+			<key>UUID</key>
+			<string>D4664908-C5C8-4153-A916-3B1CB4F6117C</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Text</string>
+			<key>name</key>
+			<string>output</string>
+			<key>value</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>UUID</key>
+			<string>0F608FA4-E725-424C-B091-D5C9CD4506A4</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Text</string>
+			<key>name</key>
+			<string>output2</string>
 			<key>value</key>
 			<string>Text</string>
 		</dict>
